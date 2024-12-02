@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 
 
@@ -25,6 +26,8 @@ public class Product {
     @Column(name="created_at")
     private LocalDateTime createdAt;
 
+    @Transient
+    private int port; // indicar el puerto a la maquina virtual
 
 
     public Long getId() {
@@ -50,6 +53,12 @@ public class Product {
     }
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+    public int getPort() {
+        return port;
+    }
+    public void setPort(int port) {
+        this.port = port;
     }
     
 }
