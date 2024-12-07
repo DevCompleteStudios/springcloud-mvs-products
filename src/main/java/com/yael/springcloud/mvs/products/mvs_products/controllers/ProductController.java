@@ -2,6 +2,7 @@ package com.yael.springcloud.mvs.products.mvs_products.controllers;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,15 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> Details(@PathVariable Long id){
+    public ResponseEntity<Product> Details(@PathVariable Long id) throws InterruptedException {
+        if( id.equals(10L) ){
+            throw new IllegalStateException("Pructo no encontrado");
+        }
+
+        if( id.equals(7L) ){
+            TimeUnit.SECONDS.sleep(7L);
+        }
+
         Optional<Product> product = productService.findById(id);
 
         if(product.isPresent()){
