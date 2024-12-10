@@ -21,7 +21,7 @@ public class ProductsServicesImpl implements IProductService {
     @Autowired
     private Environment env;
 
-    
+
     @Override
     @Transactional(readOnly=true)
     public List<Product> findAll() {
@@ -40,6 +40,18 @@ public class ProductsServicesImpl implements IProductService {
                 p.setPort(Integer.parseInt(env.getProperty("local.server.port")));
                 return p;
             });
+    }
+
+    @Override
+    @Transactional()
+    public Product save(Product product) {
+        return productsRepository.save(product);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(Long id) {
+        productsRepository.deleteById(id);
     }
 
 }
