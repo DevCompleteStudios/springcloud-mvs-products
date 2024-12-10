@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.yael.springcloud.mvs.products.mvs_products.entities.Product;
+import com.yael.libs.msv.commons.entities.Product;
 import com.yael.springcloud.mvs.products.mvs_products.services.IProductService;
 import org.springframework.web.bind.annotation.PutMapping;
 

@@ -8,7 +8,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.yael.springcloud.mvs.products.mvs_products.entities.Product;
+import com.yael.libs.msv.commons.entities.Product;
 import com.yael.springcloud.mvs.products.mvs_products.repositories.ProductsRepository;
 
 

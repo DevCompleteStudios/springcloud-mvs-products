@@ -3,7 +3,7 @@ package com.yael.springcloud.mvs.products.mvs_products.services;
 import java.util.List;
 import java.util.Optional;
 
-import com.yael.springcloud.mvs.products.mvs_products.entities.Product;
+import com.yael.libs.msv.commons.entities.Product;
 
 
 
